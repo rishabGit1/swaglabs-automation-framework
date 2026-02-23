@@ -56,6 +56,13 @@ public class inventoryPage_Test extends TestBase
 		Assert.assertEquals(expCount, actCount);
 		Reporter.log("Added product in cart count is = " + actCount);
 	}
+	
+	
+	@Test
+	public void topLeftMenuLinkTextsTest()
+	{
+		Reporter.log("Pass");
+	}
 
 	@AfterMethod
 	public void closeBrowser(ITestResult it) throws IOException 

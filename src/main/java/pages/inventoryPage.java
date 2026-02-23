@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.helpers.Reporter;
 
 import base.TestBase;
 import utility.HandleDropDownList;
@@ -46,6 +47,12 @@ public class inventoryPage extends TestBase {
 	@FindBy(xpath="//button[@name='remove-sauce-labs-bolt-t-shirt']") private WebElement removeProdBoltTShirt;
 	@FindBy(xpath="//button[@name='remove-sauce-labs-fleece-jacket']") private WebElement removePprodJacket;
 
+	
+	@FindBy(xpath = "//button[@id='react-burger-menu-btn']")private WebElement topLeftMenuBtn;
+	@FindBy(xpath = "//a[@id='inventory_sidebar_link']")private WebElement allItemsLinkTxt;
+	@FindBy(xpath = "//a[@id='about_sidebar_link']")private WebElement aboutLinkTxt;
+	@FindBy(xpath = "//a[@id='logout_sidebar_link']")private WebElement logOutLinkTxt;
+	@FindBy(xpath = "//a[@id='reset_sidebar_link']")private WebElement restLinkText;
 
 	public inventoryPage() {
 		PageFactory.initElements(driver, this);
@@ -111,6 +118,27 @@ public class inventoryPage extends TestBase {
 	public void clickOnCart()
 	{
 		cartIcon.click();
+	}
+	
+	
+	
+	public  void topLeftMenuLinkTexts()
+	{
+		
+		topLeftMenuBtn.click();
+		allItemsLinkTxt.getText();
+		aboutLinkTxt.getText();
+		logOutLinkTxt.getText();
+		restLinkText.getText();
+		
+		allItemsLinkTxt.isEnabled();
+		aboutLinkTxt.isEnabled();
+		logOutLinkTxt.isEnabled();
+		removePprodJacket.isEnabled();
+		
+	    
+		
+		
 	}
 
 
