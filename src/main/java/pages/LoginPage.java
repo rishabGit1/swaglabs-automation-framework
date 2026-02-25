@@ -16,10 +16,6 @@ public class LoginPage extends TestBase
 	   @FindBy(xpath="//input[@name='password']") private WebElement passwordTxtBox;
 	   @FindBy(xpath="//input[@name='login-button']") private WebElement loginBtn;
        
-	   
-	   
-	   
-	   
 	   public LoginPage()
 	   {
 		   PageFactory.initElements(driver, this);
@@ -28,7 +24,6 @@ public class LoginPage extends TestBase
 	   {
 		   usernameTxtBox.sendKeys(ReadData.readConfigFile("Username"));
 		   passwordTxtBox.sendKeys(ReadData.readConfigFile("Password"));
-		   Thread.sleep(3000);
 		   loginBtn.click();
 	   }
 	public String verifyURLofWebsite()
@@ -40,6 +35,15 @@ public class LoginPage extends TestBase
 	{
 		
 		return driver.getTitle();
+	}
+	public String verifyMultipleCredentialUsers(String un , String password)
+	{
+		
+		usernameTxtBox.sendKeys(un);
+		passwordTxtBox.sendKeys(password);
+		loginBtn.click();
+		return driver.getCurrentUrl();
+		
 	}
 	
 	

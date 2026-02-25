@@ -1,49 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Added product in cart count is = 2]]>
-    </line>
-    <line>
-      <![CDATA[Inventory Page title = Products]]>
-    </line>
   </reporter-output>
-  <suite started-at="2026-02-12T13:03:01 IST" name="Default suite" finished-at="2026-02-12T13:03:16 IST" duration-ms="15515">
+  <suite started-at="2026-02-19T13:55:01 IST" name="Default suite" finished-at="2026-02-19T13:55:22 IST" duration-ms="21137">
     <groups>
     </groups>
-    <test started-at="2026-02-12T13:03:01 IST" name="Default test" finished-at="2026-02-12T13:03:16 IST" duration-ms="15515">
-      <class name="testCases.inventoryPage_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.inventoryPage_Test@10683d9d]" started-at="2026-02-12T13:03:01 IST" name="setUp" finished-at="2026-02-12T13:03:07 IST" duration-ms="6517" status="PASS">
+    <test started-at="2026-02-19T13:55:01 IST" name="Default test" finished-at="2026-02-19T13:55:22 IST" duration-ms="21137">
+      <class name="testCases.MultipleUsersLogin_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:01 IST" name="setUp" finished-at="2026-02-19T13:55:05 IST" duration-ms="3241" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addProductToCartTest()[pri:0, instance:testCases.inventoryPage_Test@10683d9d]" started-at="2026-02-12T13:03:07 IST" name="addProductToCartTest" finished-at="2026-02-12T13:03:11 IST" duration-ms="3356" status="PASS">
+        <test-method signature="verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:05 IST" name="verifyMultipleCredentialUsers_Test" data-provider="validation" finished-at="2026-02-19T13:55:05 IST" duration-ms="351" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
-            <line>
-              <![CDATA[Added product in cart count is = 2]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- addProductToCartTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.inventoryPage_Test@10683d9d]" started-at="2026-02-12T13:03:11 IST" name="closeBrowser" finished-at="2026-02-12T13:03:11 IST" duration-ms="183" status="PASS">
+        </test-method> <!-- verifyMultipleCredentialUsers_Test -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:05 IST" name="closeBrowser" finished-at="2026-02-19T13:55:05 IST" duration-ms="180" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyMultipleCredentialUsers_Test status=SUCCESS method=MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.inventoryPage_Test@10683d9d]" started-at="2026-02-12T13:03:11 IST" name="setUp" finished-at="2026-02-12T13:03:16 IST" duration-ms="5232" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:05 IST" name="setUp" finished-at="2026-02-19T13:55:07 IST" duration-ms="1948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyPageTitleTest()[pri:0, instance:testCases.inventoryPage_Test@10683d9d]" started-at="2026-02-12T13:03:16 IST" name="verifyPageTitleTest" finished-at="2026-02-12T13:03:16 IST" duration-ms="37" status="PASS">
+        <test-method signature="verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:07 IST" name="verifyMultipleCredentialUsers_Test" data-provider="validation" finished-at="2026-02-19T13:55:08 IST" duration-ms="399" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[locked_out_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [https://www.saucedemo.com/] but found [https://www.saucedemo.com/inventory.html]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [https://www.saucedemo.com/] but found [https://www.saucedemo.com/inventory.html]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at testCases.MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(MultipleUsersLogin_Test.java:56)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
-            <line>
-              <![CDATA[Inventory Page title = Products]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- verifyPageTitleTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.inventoryPage_Test@10683d9d]" started-at="2026-02-12T13:03:16 IST" name="closeBrowser" finished-at="2026-02-12T13:03:16 IST" duration-ms="151" status="PASS">
+        </test-method> <!-- verifyMultipleCredentialUsers_Test -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:08 IST" name="closeBrowser" finished-at="2026-02-19T13:55:08 IST" duration-ms="266" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyMultipleCredentialUsers_Test status=FAILURE method=MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testCases.inventoryPage_Test -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:08 IST" name="setUp" finished-at="2026-02-19T13:55:10 IST" duration-ms="1875" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:10 IST" name="verifyMultipleCredentialUsers_Test" data-provider="validation" finished-at="2026-02-19T13:55:10 IST" duration-ms="370" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[problem_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMultipleCredentialUsers_Test -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:10 IST" name="closeBrowser" finished-at="2026-02-19T13:55:10 IST" duration-ms="182" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyMultipleCredentialUsers_Test status=SUCCESS method=MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:10 IST" name="setUp" finished-at="2026-02-19T13:55:12 IST" duration-ms="1794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:12 IST" name="verifyMultipleCredentialUsers_Test" data-provider="validation" finished-at="2026-02-19T13:55:17 IST" duration-ms="5412" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[performance_glitch_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMultipleCredentialUsers_Test -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:17 IST" name="closeBrowser" finished-at="2026-02-19T13:55:18 IST" duration-ms="188" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyMultipleCredentialUsers_Test status=SUCCESS method=MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:18 IST" name="setUp" finished-at="2026-02-19T13:55:19 IST" duration-ms="1797" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:19 IST" name="verifyMultipleCredentialUsers_Test" data-provider="validation" finished-at="2026-02-19T13:55:20 IST" duration-ms="429" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[error_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMultipleCredentialUsers_Test -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:20 IST" name="closeBrowser" finished-at="2026-02-19T13:55:20 IST" duration-ms="197" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyMultipleCredentialUsers_Test status=SUCCESS method=MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:20 IST" name="setUp" finished-at="2026-02-19T13:55:22 IST" duration-ms="1862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:22 IST" name="verifyMultipleCredentialUsers_Test" data-provider="validation" finished-at="2026-02-19T13:55:22 IST" duration-ms="399" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[visual_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMultipleCredentialUsers_Test -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008]" started-at="2026-02-19T13:55:22 IST" name="closeBrowser" finished-at="2026-02-19T13:55:22 IST" duration-ms="177" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyMultipleCredentialUsers_Test status=SUCCESS method=MultipleUsersLogin_Test.verifyMultipleCredentialUsers_Test(java.lang.String,java.lang.String)[pri:0, instance:testCases.MultipleUsersLogin_Test@7eac9008] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testCases.MultipleUsersLogin_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
