@@ -35,7 +35,7 @@ public class inventoryPage_Test extends TestBase
 
 	@Test
 	public void verifyPageTitleTest() throws InterruptedException, EncryptedDocumentException, IOException {
-		String expTitle = ReadData.readExcel(0, 3);            //"Products";(0,3)
+		String expTitle = ReadData.readExcel(0, 3); // "Products";(0,3)
 		String actTitle = invent.verifyPageTitle();
 		Assert.assertEquals(expTitle, actTitle);
 		Reporter.log("Inventory Page title = " + actTitle);
@@ -43,33 +43,30 @@ public class inventoryPage_Test extends TestBase
 
 	@Test
 	public void addProductToCartTest() throws InterruptedException, EncryptedDocumentException, IOException {
-		String expCount = ReadData.readExcel(0, 4);//"6";(0,4);
+		String expCount = ReadData.readExcel(0, 4);// "6";(0,4);
 		String actCount = invent.add6Products();
 		Assert.assertEquals(expCount, actCount);
 		Reporter.log("Added product in cart count is = " + actCount);
 	}
+
 	@Test
-	public void remove2ProductsTest() throws InterruptedException, EncryptedDocumentException, IOException
-	{
-		String expCount = ReadData.readExcel(0, 5);//"4";(0,5)
+	public void remove2ProductsTest() throws InterruptedException, EncryptedDocumentException, IOException {
+		String expCount = ReadData.readExcel(0, 5);// "4";(0,5)
 		String actCount = invent.remove2Products();
 		Assert.assertEquals(expCount, actCount);
 		Reporter.log("Added product in cart count is = " + actCount);
 	}
-	
-	
+
 	@Test
-	public void topLeftMenuLinkTextsTest()
-	{
-		Reporter.log("Pass");
+	public void printAllProductDetailsTest() throws InterruptedException {
+		invent.printAllProductDetails();
+		Reporter.log("Printed all product details to console successfully.");
 	}
 
 	@AfterMethod
-	public void closeBrowser(ITestResult it) throws IOException 
-	{
-		
-		if(it.FAILURE== it.getStatus())
-		{
+	public void closeBrowser(ITestResult it) throws IOException {
+
+		if (it.FAILURE == it.getStatus()) {
 			screenshot_Class.takeSS(it.getName());
 		}
 		driver.close();
