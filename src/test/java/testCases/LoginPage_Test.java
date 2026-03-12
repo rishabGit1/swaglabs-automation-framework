@@ -15,7 +15,7 @@ import pages.LoginPage;
 import utility.ReadData;
 import utility.screenshot_Class;
 
-//12 march jhatu
+//12 march jhatu testing
 
 public class LoginPage_Test extends TestBase {
 
