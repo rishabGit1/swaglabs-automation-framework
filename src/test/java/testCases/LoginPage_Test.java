@@ -15,7 +15,8 @@ import pages.LoginPage;
 import utility.ReadData;
 import utility.screenshot_Class;
 
-//12 march jhatu testing
+//12 march 
+//204
 
 public class LoginPage_Test extends TestBase {
 
@@ -27,25 +28,27 @@ public class LoginPage_Test extends TestBase {
 		initialization();
 		login = new LoginPage();
 
-		 
-	 
+	}
 
-	publi
-	 {  
-		String expURL =   R
-		String actURL = gin.verifyURLofWebsite();  
+	@Test
+	public void loginToAppTest() throws IOException, InterruptedException {
+		login.loginToApp();
+		String expURL = ReadData.readExcel(0, 0); // "https://www.saucedemo.com/inventory.html";(0,0)
+		String actURL = login.verifyURLofWebsite();
 		Assert.assertEquals(expURL, actURL);
-		Reporter.log("Login Successful = " +
+		Reporter.log("Login Successful = " + actURL);
+	}
 
-	public void verifyURLofWebsiteTest() throws InterruptedException, EncryptedDocumentException, IOException
-	{ 	String expURL = ReadData.readExcel(0, 1);            //"https://www.saucedemo.com/";(0,1)
-		String actURL = login.verifyURLofWebsite(  
+	@Test
+	public void verifyURLofWebsiteTest() throws InterruptedException, EncryptedDocumentException, IOException {
+		String expURL = ReadData.readExcel(0, 1); // "https://www.saucedemo.com/";(0,1)
+		String actURL = login.verifyURLofWebsite();
 		Assert.assertEquals(expURL, actURL);
 		Reporter.log("URL of website = " + actURL);
-		
 
-	@
+	}
 
+	@Test
 	public void verifyTitleofWebsite() throws EncryptedDocumentException, IOException {
 		String expTitle = ReadData.readExcel(0, 2);// "Swag Labs";(0,2)
 		String actTitle = login.verifyTitleofWebsite();
@@ -53,10 +56,13 @@ public class LoginPage_Test extends TestBase {
 		Reporter.log("Title of website = " + actTitle);
 	}
 
-	public void closeBrowser(ITestResult it) throws IOException 
-	{ 	
+	@AfterMethod
+	public void closeBrowser(ITestResult it) throws IOException {
 
-		{   	screenshot_Class.takeSS(it.getName());
+		if (it.FAILURE == it.getStatus()) {
+			screenshot_Class.takeSS(it.getName());
 		}
 		driver.close();
 	}
+
+}
