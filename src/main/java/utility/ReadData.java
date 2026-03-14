@@ -33,9 +33,6 @@ public class ReadData
 		//path for Laptop
 		//FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\SwagLabsWeb_Automation-\\TestData\\TestData_SwagLab.xlsx");
 
-		
-		
-		
 		Sheet es = WorkbookFactory.create(file).getSheet("Sheet1");
 		String value = es.getRow(rownum).getCell(colnum).getStringCellValue();
 		return value;
