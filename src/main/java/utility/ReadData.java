@@ -15,10 +15,10 @@ public class ReadData
 	{
 		
 		//path for desktop system
-	    FileInputStream file = new FileInputStream("C:\\Users\\dell\\Downloads\\Rishabh_Main_12feb\\Rishabh_Main\\src\\main\\java\\config\\config.properties");
+	  //  FileInputStream file = new FileInputStream("C:\\Users\\dell\\Downloads\\Rishabh_Main_12feb\\Rishabh_Main\\src\\main\\java\\config\\config.properties");
 		
 		//path for Laptop
-		//FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\SwagLabsWeb_Automation-\\src\\main\\java\\config\\config.properties");
+		FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\SwagLabsWeb_Automation-\\src\\main\\java\\config\\config.properties");
 		Properties prop = new Properties();
 		prop.load(file);
 		return prop.getProperty(value);
@@ -28,10 +28,10 @@ public class ReadData
 	public static String readExcel(int rownum , int colnum) throws EncryptedDocumentException, IOException
 	{
 		//path for desktop system
-		FileInputStream file = new FileInputStream("C:\\Users\\dell\\Downloads\\Rishabh_Main_12feb\\Rishabh_Main\\TestData\\TestData_SwagLab.xlsx");
+		//FileInputStream file = new FileInputStream("C:\\Users\\dell\\Downloads\\Rishabh_Main_12feb\\Rishabh_Main\\TestData\\TestData_SwagLab.xlsx");
 		
 		//path for Laptop
-		//FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\SwagLabsWeb_Automation-\\TestData\\TestData_SwagLab.xlsx");
+		FileInputStream file = new FileInputStream("C:\\Users\\DELL\\Desktop\\SwagLabsWeb_Automation-\\TestData\\TestData_SwagLab.xlsx");
 
 		
 		

@@ -1,6 +1,7 @@
 package pages;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,10 +25,13 @@ public class LoginPage extends TestBase
 	   {
 		   usernameTxtBox.sendKeys(ReadData.readConfigFile("Username"));
 		   passwordTxtBox.sendKeys(ReadData.readConfigFile("Password"));
-		   loginBtn.click();
+		 //driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		    loginBtn.click();
 	   }
 	public String verifyURLofWebsite()
 	{
+		
+		
 		return driver.getCurrentUrl();
 	}
 	
